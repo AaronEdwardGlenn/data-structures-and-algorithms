@@ -83,7 +83,7 @@ class LinkedList {
         }
     
         if(num > lengthCounter){
-          return 'Provided number is higher than length of list. Please provide number within the linked list\'s length.';
+          return 'If the val is higher than list length. Return the number of the that length.';
         }
         
         current = this.head;
