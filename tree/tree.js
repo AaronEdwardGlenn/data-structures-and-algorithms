@@ -40,6 +40,18 @@ class BinarySearchTree {
     return this;
   }
   
+  levelTraverse(){
+    if(this.root === null) return;
+    const queue = [this.root];
+    const returnArray = [];
+    while(queue.length > 0){
+      const current = queue[0];
+      if(current.left) queue.push(current.left);
+      if(current.right) queue.push(current.right);
+      returnArray.push(queue.shift().value);
+    }
+    return returnArray;
+  }
 }
   
 module.exports = { Node, BinarySearchTree };
