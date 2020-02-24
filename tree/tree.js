@@ -39,8 +39,8 @@ class BinarySearchTree {
     }
     return this;
   }
-  
-  levelTraverse(){
+
+  bredthTraverse(){
     if(this.root === null) return;
     const queue = [this.root];
     const returnArray = [];
@@ -50,7 +50,19 @@ class BinarySearchTree {
       if(current.right) queue.push(current.right);
       returnArray.push(queue.shift().value);
     }
-    return returnArray;
+  }
+  findMax(){
+    if(this.root === null) return;
+    const queue = [this.root];
+    let maxValue = this.root.value;
+    while(queue.length > 0){
+      const current = queue[0];
+      if(current.left) queue.push(current.left);
+      if(current.right) queue.push(current.right);
+      const currentValue = queue.shift().value;
+      maxValue = currentValue > maxValue ? currentValue : maxValue;
+    }
+    return maxValue;
   }
 }
   
